@@ -24,7 +24,7 @@
     </script>
   </head>
   <body>
-    <section id="landing">
+    <section id="landing" onmousemove="moveBackground(event)">
       <nav>
         <figure class="logo__img--wrapper">
           <img class="logo__img" src="./assets/Logo.png" alt="" />
@@ -33,7 +33,8 @@
           <li class="nav__link">
             <a
               href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black " onclick="toggleModal()"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              onclick="toggleModal()"
               >About</a
             >
           </li>
@@ -51,7 +52,7 @@
               >Contact</a
             >
           </li>
-          <li class="nav__link click">
+          <li class="nav__link click" onclick="toggleContrast()">
             <a href="#" class="nav__link--anchor link__hover-effect"
               ><i class="fa-solid fa-circle-half-stroke"></i
             ></a>
@@ -61,12 +62,13 @@
       <header class="header">
         <div class="header__title">
           <h1 class="title">Hey</h1>
-          <h1 class="title purple">I'm Chris.</h1>
+          <h1 class="sub-title purple">I'm Chris.</h1>
           <p class="header__para">
             I'm a <b class="purple bold">Frontend Software Engineer</b> with a
             strong passion for web applications with great user experiences.
             <br />
-            Here's a bit more <b class="purple">about me</b>
+            Here's a bit more
+            <b class="purple click" onclick="toggleModal()">about me</b>
           </p>
           <div class="social__list">
             <a
@@ -87,9 +89,11 @@
           </div>
         </div>
       </header>
-      <button class="mail__btn click" onclick="toggleModal()">
-        <i class="fa-solid fa-envelope"></i>
-      </button>
+      <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
+      </a>
       <a href="#projects" class="scroll">
         <div class="scroll__icon click"></div>
       </a>
@@ -140,7 +144,10 @@
           </div>
         </div>
         <div class="modal__half modal__contact">
-        <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+          <i
+            class="fa-solid fa-xmark modal__exit click"
+            onclick="toggleModal()"
+          ></i>
           <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
           <h4 class="modal__sub-title modal__sub-title--contact">
             I'm currently open to new opportunities.
@@ -175,6 +182,15 @@
           </div>
         </div>
       </div>
+      <img src="./assets/semi circle.svg" class="shape shape--0" />
+      <img src="./assets/circle.svg" class="shape shape--1" />
+      <img src="./assets/squiggly.svg" class="shape shape--2" />
+      <img src="./assets/circle.svg" class="shape shape--3" />
+      <img src="./assets/triangle.svg" class="shape shape--4" />
+      <img src="./assets/circle.svg" class="shape shape--5" />
+      <img src="./assets/squiggly.svg" class="shape shape--6" />
+      <img src="./assets/circle.svg" class="shape shape--7" />
+      <img src="./assets/semi circle.svg" class="shape shape--8" />
     </section>
     <section id="projects">
       <div class="container">
@@ -280,20 +296,23 @@
 
           <div class="footer__social--links">
             <a
-              href="#"
+              href="https://github.com/Just-0ne-Guy"
+              target="_blank"
               class="footer__link link__hover-effect link__hover-effect--white"
             >
               Github
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/christian-maffei-a584b9289/"
+              target="_blank"
               class="footer__link link__hover-effect link__hover-effect--white"
             >
               linkedin
             </a>
             <a
               href="#"
-              class="footer__link link__hover-effect link__hover-effect--white" onclick="toggleModal()"
+              class="footer__link link__hover-effect link__hover-effect--white"
+              onclick="toggleModal()"
             >
               Email
             </a>
