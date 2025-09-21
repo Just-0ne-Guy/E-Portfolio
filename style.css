@@ -73,6 +73,7 @@ button {
   margin-bottom: 12px;
   text-align: left;
   line-height: 1;
+
 }
 
 .sub-title {
@@ -126,6 +127,7 @@ button {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 2;
 }
 
 .scroll__icon {
@@ -247,6 +249,7 @@ landing
   width: 100%;
   max-width: 1000px;
   padding: 0 30px;
+  z-index: 2;
 }
 
 .header__para {
@@ -510,6 +513,9 @@ PROJECTS
   font-size: 48px;
   margin-bottom: 60px;
   transition: all 300ms ease;
+  position: relative;
+  z-index: 2;
+  
 }
 
 .project__buffer {
@@ -663,8 +669,9 @@ Shapes
 */
 
 .shape {
-  z-index: -1;
   position: fixed;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .shape--0 {
