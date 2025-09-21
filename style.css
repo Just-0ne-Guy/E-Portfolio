@@ -663,6 +663,7 @@ Shapes
 */
 
 .shape {
+  z-index: -1;
   position: fixed;
 }
 
