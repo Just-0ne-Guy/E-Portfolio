@@ -801,7 +801,6 @@ Shapes
     filter: blur(5px);
   }
 
-  /* makes taps feel snappier on mobile */
   .project__description--link {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
@@ -815,7 +814,7 @@ Shapes
     touch-action: manipulation;
   }
 
-  /* when tapped, apply the same styles you use on hover */
+
   .project__wrapper.is-active .project__description {
     opacity: 1;
     transform: translateY(-50%);
