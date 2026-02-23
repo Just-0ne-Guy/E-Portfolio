@@ -73,7 +73,6 @@ button {
   margin-bottom: 12px;
   text-align: left;
   line-height: 1;
-
 }
 
 .sub-title {
@@ -338,7 +337,10 @@ MODAL
   display: flex;
   visibility: hidden;
   z-index: -1;
-  transition: visability 1s, z-index 1s, box-shadow 0.5s ease;
+  transition:
+    visability 1s,
+    z-index 1s,
+    box-shadow 0.5s ease;
 }
 
 .modal--open .modal {
@@ -515,7 +517,6 @@ PROJECTS
   transition: all 300ms ease;
   position: relative;
   z-index: 2;
-  
 }
 
 .project__buffer {
@@ -525,7 +526,7 @@ PROJECTS
 .project__img--wrapper {
   position: relative;
   width: 100%;
-  
+  z-index: 0;
 }
 
 .project__img {
@@ -534,7 +535,6 @@ PROJECTS
   display: block;
   transition: all 450ms ease;
 }
-
 
 .project__wrapper {
   position: relative;
@@ -559,9 +559,12 @@ PROJECTS
   left: 90px;
   transform: translateY(100%);
   opacity: 0;
-  transition: opacity 300ms ease, transform 450ms ease;
+  transition:
+  opacity 300ms ease,
+  transform 450ms ease;
   color: white;
   max-width: 550px;
+  z-index: 2;
 }
 
 .project__wrapper:hover .project__wrapper--background {
@@ -574,6 +577,8 @@ PROJECTS
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
+  pointer-events: none;
   background-color: #1c1d25;
   opacity: 0;
   transition: all 450ms ease;
@@ -596,6 +601,8 @@ PROJECTS
 .project__description--para {
   margin: 16px 0;
 }
+
+
 
 /* 
 
@@ -772,5 +779,31 @@ Shapes
   }
   .project__description--sub-title {
     margin-bottom: 8px;
+  }
+}
+
+/* mobile tap support */
+@media (hover: none) and (pointer: coarse) {
+  .project__wrapper:active .project__description,
+  .project__wrapper:focus-within .project__description {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+
+  .project__wrapper:active .project__wrapper--background,
+  .project__wrapper:focus-within .project__wrapper--background {
+    opacity: 0.7;
+  }
+
+  .project__wrapper:active .project__img,
+  .project__wrapper:focus-within .project__img {
+    transform: scale(1.07);
+    filter: blur(5px);
+  }
+
+  /* makes taps feel snappier on mobile */
+  .project__description--link {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 }
