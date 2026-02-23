@@ -807,3 +807,30 @@ Shapes
     -webkit-tap-highlight-color: transparent;
   }
 }
+
+/* mobile: let tap trigger the same effect as hover */
+@media (hover: none) and (pointer: coarse) {
+  .project__wrapper {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* when tapped, apply the same styles you use on hover */
+  .project__wrapper.is-active .project__description {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+
+  .project__wrapper.is-active .project__wrapper--background {
+    opacity: 0.7;
+  }
+
+  .project__wrapper.is-active .project__img {
+    transform: scale(1.07);
+    filter: blur(5px);
+  }
+
+  .project__wrapper--background {
+    pointer-events: none;
+  }
+}

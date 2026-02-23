@@ -55,3 +55,35 @@ function toggleModal() {
   } else isModalOpen = true;
   document.body.classList += " modal--open";
 }
+
+// mobile "hover" support: tap card to toggle hover effect
+const projectCards = document.querySelectorAll(".project__wrapper");
+
+function closeAllCards(except = null) {
+  projectCards.forEach(card => {
+    if (card !== except) card.classList.remove("is-active");
+  });
+}
+
+projectCards.forEach(card => {
+  // tap anywhere on card toggles the effect
+  card.addEventListener("click", (e) => {
+    // if user clicked an actual link/icon, let it behave normally
+    if (e.target.closest("a")) return;
+
+    const isActive = card.classList.contains("is-active");
+    closeAllCards();
+    if (!isActive) card.classList.add("is-active");
+  });
+
+  // make it feel instant on touch devices
+  card.addEventListener("touchstart", () => {
+    closeAllCards(card);
+    card.classList.add("is-active");
+  }, { passive: true });
+});
+
+// tap outside closes
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".project__wrapper")) closeAllCards();
+});
